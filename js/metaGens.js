@@ -62,7 +62,7 @@ addLayer("m", {
             title: "Lori",
             body() {return " \
                     <img src='resources/loriWink.png' style='float:left'> \
-                    <p style='padding: 99.5px 0;'>Hi there! My name is Lori, nice to meet you! This is the current end of Prestigious Saplings: Glorious Generators for now, but I hope to see you in Part 2! Thanks for playing! (Also, don't worry, I won't softlock you if you close my infobox!)</p>\
+                    <p style='padding: 83px 0;'>Hi there! My name is Lori, nice to meet you! This is the current end of Prestigious Saplings: Glorious Generators for now, but I hope to see you in Part 2! Thanks for playing! (Also, don't worry! I won't softlock you if you close my infobox.)</p>\
             "},
         },
     },
