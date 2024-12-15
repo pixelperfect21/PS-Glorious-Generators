@@ -12,6 +12,10 @@ addLayer("achievements", {
     }},
     type: "none",
 
+    achievementAmount() {
+        let amount = player.g.points.add(player.achievements.points)
+        return amount
+    },
     achBase() {
         let base = new Decimal(2)
         if (player.c.points.gte(1)) {
@@ -40,7 +44,7 @@ addLayer("achievements", {
         return effect
     },
     effect() {
-        let effect = tmp.achievements.achBase.pow(player.g.points.add(player.achievements.points).mul(tmp.a.achievementEffectiveness).add(tmp.achievements.freeAchs))
+        let effect = tmp.achievements.achBase.pow(tmp.achievements.achievementAmount.mul(tmp.a.achievementEffectiveness).add(tmp.achievements.freeAchs))
         return effect
     },
 
@@ -596,7 +600,7 @@ addLayer("g", {
                 "} else {return " \
                     <h3>Multi Generation II</h3> \
                     <p>Generator effect multiplies DC gain at a reduced rate. Effect: x" + format(this.effect()) + "</p><br> \
-                    <p>Cost: 1e1100 generator power</p>\
+                    <p>Cost: 1e1303 generator power</p>\
                 "}
             },
             unlocked() {return hasMilestone('c', 5)},
@@ -1085,7 +1089,7 @@ addLayer("a", {
             fullDisplay() { 
                 if (!player[this.layer].pseudoUnlocks.includes(this.id)) {return " \
                     <h3>Explore A New Upgrade</h3> \
-                    <p>Req: 120 alternator base.</p> \
+                    <p>Req: 116 alternator base.</p> \
                 "} else {return " \
                     <h3>Overcharge</h3> \
                     <p>Multiply the charge limit and charge generation based on chargers. Effect: x" + format(this.effect()) + "</p><br> \
@@ -1093,7 +1097,7 @@ addLayer("a", {
                 "}
             },
             unlocked() {return hasMilestone('c', 8)},
-            pseudoReq() {return tmp.a.alternatorBase.gte(120)},
+            pseudoReq() {return tmp.a.alternatorBase.gte(116)},
             canAfford() {
                 if (!player[this.layer].pseudoUnlocks.includes(this.id)) {
                     return this.pseudoReq()
@@ -1945,7 +1949,7 @@ addLayer("c", {
         return "which are generating " + format(tmp.c.effect) + " charge per second, with a limit of " + format(tmp.c.chargeLimit) + " charge"
     },
     chargeEffect() {
-        let effect = player.c.charge.add(1).log10().add(1).log10().pow(0.5).div(7.5)
+        let effect = player.c.charge.add(1).log10().add(1).log10().pow(0.5).div(7.4)
         return effect
     },
     chargeLimit() {
@@ -1974,9 +1978,9 @@ addLayer("c", {
             done() { return player.c.points.gte(7) }
         },
         3: {
-            requirementDescription: "11 chargers",
+            requirementDescription: "10 chargers",
             effectDescription: "Automatically reset for dynamos.",
-            done() { return player.c.points.gte(11) }
+            done() { return player.c.points.gte(10) }
         },   
         4: {
             requirementDescription: "14 chargers",
@@ -2322,9 +2326,9 @@ addLayer("v", {
             done() { return player.v.points.gte(7) }
         },
         3: {
-            requirementDescription: "11 amplifiers",
+            requirementDescription: "10 amplifiers",
             effectDescription: "Unlock Batteries (in the Charger layer).",
-            done() { return player.v.points.gte(11) }
+            done() { return player.v.points.gte(10) }
         },
     },
 
@@ -2451,7 +2455,7 @@ addLayer("v", {
             fullDisplay() { 
                 if (!player[this.layer].pseudoUnlocks.includes(this.id)) {return " \
                     <h3>Explore A New Upgrade</h3> \
-                    <p>Req: 115 generators within <b>Generator Maintenance</b>.</p> \
+                    <p>Req: 114 generators within <b>Generator Maintenance</b>.</p> \
                 "} else {return " \
                     <h3>Duality</h3> \
                     <p>Charge and voltage multiply each others' gains, and voltage multiplies the charge limit. Effect: x" + format(this.effect()[0]) + " charge/charge limit, x" + format(this.effect()[1]) + " voltage</p><br> \
@@ -2459,7 +2463,7 @@ addLayer("v", {
                 "}
             },
             unlocked() {return hasMilestone('c', 10)},
-            pseudoReq() {return inChallenge('c', 11) && player.g.points.gte(115)},
+            pseudoReq() {return inChallenge('c', 11) && player.g.points.gte(114)},
             canAfford() {
                 if (!player[this.layer].pseudoUnlocks.includes(this.id)) {
                     return this.pseudoReq()
@@ -2565,11 +2569,11 @@ addLayer("v", {
             fullDisplay() { 
                 if (!player[this.layer].pseudoUnlocks.includes(this.id)) {return " \
                     <h3>Explore A New Upgrade</h3> \
-                    <p>Req: 1e145 alternating current within <b>Dynamo Maintenance</b>.</p> \
+                    <p>Req: 1e145 alternating current within <b>Alternator Maintenance</b>.</p> \
                 "} else {return " \
                     <h3>Better Chargers</h3> \
                     <p>Increase the charger base based on charge. Effect: +" + format(this.effect()) + "</p><br> \
-                    <p>Cost: 4e11 voltage</p>\
+                    <p>Cost: 3e11 voltage</p>\
                 "}
             },
             unlocked() {return hasMilestone('c', 10)},
@@ -2578,7 +2582,7 @@ addLayer("v", {
                 if (!player[this.layer].pseudoUnlocks.includes(this.id)) {
                     return this.pseudoReq()
                 } else {
-                    return player.v.voltage.gte(4e11)
+                    return player.v.voltage.gte(3e11)
                 }
             },
             onPurchase() {
@@ -2586,7 +2590,7 @@ addLayer("v", {
                     player[this.layer].pseudoUnlocks.push(this.id)
                     player[this.layer].upgrades.pop()
                 } else {
-                    player.v.voltage = player.v.voltage.sub(4e11)
+                    player.v.voltage = player.v.voltage.sub(3e11)
                 }
             },
             effect() {
