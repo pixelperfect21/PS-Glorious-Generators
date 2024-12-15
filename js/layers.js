@@ -34,6 +34,9 @@ addLayer("achievements", {
     },
     achievementEffectiveness() {
         let effect = new Decimal(1)
+        if (player.m.points.gte(1)) {
+            effect = effect.add(player.m.points.pow(0.5).div(50))
+        }
         return effect
     },
     effect() {
@@ -215,7 +218,7 @@ addLayer("achievements", {
             }
         }],
         ['display-text', () => {
-            if (false) {
+            if (player.m.points.gte(1)) {
                 return "Meta-Generators are increasing achievement effectiveness by " + format(tmp.achievements.achievementEffectiveness.mul(100)) + "%"
             }
         }],
