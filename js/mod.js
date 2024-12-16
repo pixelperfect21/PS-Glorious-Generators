@@ -17,7 +17,7 @@ let VERSION = {
 }
 
 let changelog = `<h1>Changelog:</h1><br>
-	<h3>v1.0: Glorious Generator!</h3><br>
+	<h3>v1.0: Glorious Generators!</h3><br>
 		- Added stuff.<br>
   	<h3>v1.01: I Forgot To Change The Version Number</h3><br>
 		- Fixed some typos.<br>
