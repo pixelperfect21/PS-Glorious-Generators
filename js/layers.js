@@ -2056,7 +2056,7 @@ addLayer("c", {
             unlocked() {return hasMilestone('c', 1)}
         },
         12: {
-            name: "Dymamo Maintenance",
+            name: "Dynamo Maintenance",
             fullDisplay() {return " \
                 Resets all dynamo content. All upgrades affecting dynamo stats (base, free dynas, etc.) are nullified, and dynamos act like they were unlocked last.<br><br> \
                 Reach " + format(this.req()) + " dynamos to complete.<br> \
