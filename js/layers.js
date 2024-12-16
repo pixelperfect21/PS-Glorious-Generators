@@ -44,7 +44,7 @@ addLayer("achievements", {
         return effect
     },
     effect() {
-        let effect = tmp.achievements.achBase.pow(tmp.achievements.achievementAmount.mul(tmp.a.achievementEffectiveness).add(tmp.achievements.freeAchs))
+        let effect = tmp.achievements.achBase.pow(tmp.achievements.achievementAmount.mul(tmp.achievements.achievementEffectiveness).add(tmp.achievements.freeAchs))
         return effect
     },
 
@@ -167,7 +167,7 @@ addLayer("achievements", {
         45: {
             name() {return "Maintenance Instead of THIS?"},
             tooltip() {return "Unlock Batteries."},
-            done() {return player.v.points.gte(11)},
+            done() {return player.v.points.gte(10)},
             onComplete() {player.achievements.points = player.achievements.points.add(1)}
         },
         51: {
