@@ -2312,12 +2312,12 @@ addLayer("v", {
     milestones: {
         0: {
             requirementDescription: "3 amplifiers",
-            effectDescription: "Keep row 1 amplifier and generator upgrades on reset",
+            effectDescription: "Keep row 1 alternator and generator upgrades on reset",
             done() { return player.v.points.gte(3) }
         },
         1: {
             requirementDescription: "4 amplifiers",
-            effectDescription: "Keep row 2 amplifier and generator upgrades on reset. Unlock charge/voltage upgrades.",
+            effectDescription: "Keep row 2 alternator and generator upgrades on reset. Unlock charge/voltage upgrades.",
             done() { return player.v.points.gte(4) }
         },
         2: {
