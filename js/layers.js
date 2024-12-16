@@ -44,7 +44,7 @@ addLayer("achievements", {
         return effect
     },
     effect() {
-        let effect = tmp.achievements.achBase.pow(tmp.achievements.achievementAmount.mul(tmp.achievements.achievementEffectiveness).add(tmp.achievements.freeAchs))
+        let effect = tmp.achievements.achBase.pow(tmp.achievements.achievementAmount.mul(tmp.achievements.achievementEffectiveness).add(tmp.achievements.freeAchs)).sub(1)
         return effect
     },
 
