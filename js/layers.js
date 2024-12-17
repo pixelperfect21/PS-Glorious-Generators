@@ -1374,7 +1374,9 @@ addLayer("d", {
         {key: "d", description: "D: Reset for dynamos", onPress(){if (canReset(this.layer)) doReset(this.layer)}, unlocked() {return player.d.unlocked}},
     ],
     onPrestige() {
-        player.d.directCurrent = new Decimal(0)
+	if (!tmp.d.resetsNothing) {
+		player.d.directCurrent = new Decimal(0)
+	}
     },
 
     resetsNothing() {return hasMilestone('c', 0)},
