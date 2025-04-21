@@ -12,8 +12,8 @@ let modInfo = {
 
 // Set your version in num and name
 let VERSION = {
-	num: "1.11",
-	name: "Pixel, Please Stop Fumbling Updates",
+	num: "1.111",
+	name: "PIXEL I TOLD YOU TO STOP FUMBLING",
 }
 
 let changelog = `<h1>Changelog:</h1><br>
@@ -124,6 +124,7 @@ function fixOldSave(oldVersion){
 	if (oldVersion <= "1.11") {
 		if (player.m.points.gte(1) && !player.m.unlocked) {
 			player.m.points = new Decimal(0)
+			player.m.inDialogue = false
 		}
 	}
 }
