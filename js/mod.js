@@ -28,7 +28,9 @@ let changelog = `<h1>Changelog:</h1><br>
 		- Reworked the Voltage mechanic<br>
 	<h3>v1.11: Pixel, Please Stop Fumbling Updates</h3><br>
 		- Balancing reworks<br>
-		- Fixed Meta Generator related bugs<br>`
+		- Fixed Meta Generator related bugs<br>
+	<h3>v1.111: PIXEL I TOLD YOU TO STOP FUMBLING</h3><br>
+		- Fixed old saves recieving a free meta generator`
 
 let winText = `if you can see this you most likely caused something to inflate, please let me know, and also tell me your most recently purchased upgrade (if you remember what it was)`
 
@@ -112,11 +114,16 @@ function fixOldSave(oldVersion){
 		startDialogue("introduction1")
 	}
 	if (oldVersion <= "1.1") {
-		if (player.m.points.lte(0) && player.m.metaTokens.gte(1)) {
+		if (player.m.points.lte(0) && player.m.metaTokens.gte(1) && player.m.unlocked) {
 			player.m.points = new Decimal(1)
 		}
 		if (player.m.dialogueStatus == "metaUpgrades3" && getBuyableAmount('m', 51).eq(1)) {
 			startDialogue('metaUpgrades4B')
+		}
+	}
+	if (oldVersion <= "1.11") {
+		if (player.m.points.gte(1) && !player.m.unlocked) {
+			player.m.points = new Decimal(0)
 		}
 	}
 }
