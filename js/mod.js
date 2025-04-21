@@ -4,16 +4,16 @@ let modInfo = {
 	pointsName: "points",
 	modFiles: ["layers.js", "tree.js", "metaGens.js"],
 
-	discordName: "",
-	discordLink: "",
+	discordName: "Pixel's Cool Server",
+	discordLink: "https://discord.gg/5K4DXpGeU2",
 	initialStartPoints: new Decimal (0), // Used for hard resets and new players
 	offlineLimit: 1,  // In hours
 }
 
 // Set your version in num and name
 let VERSION = {
-	num: "1.01",
-	name: "I Forgot To Change The Version Number",
+	num: "1.1",
+	name: "Half An Update Is Better Than None",
 }
 
 let changelog = `<h1>Changelog:</h1><br>
@@ -21,7 +21,11 @@ let changelog = `<h1>Changelog:</h1><br>
 		- Added stuff.<br>
   	<h3>v1.01: I Forgot To Change The Version Number</h3><br>
 		- Fixed some typos.<br>
-		- Fixed Achievement Power not working properly.`
+		- Fixed Achievement Power not working properly.<br>
+	<h3>v1.1: Half An Update Is Better Than None</h3><br>
+		- Added content to the Meta-Generator layer.<br>
+		- Added max buying to the Generator, Alternator, and Dynamo layers<br>
+		- Reworked the Voltage mechanic`
 
 let winText = `Congratulations! You have reached the end and beaten this game, but for now...`
 
@@ -35,7 +39,7 @@ function getStartPoints(){
 
 // Determines if it should show points/sec
 function canGenPoints(){
-	return true
+	return !player.m.inDialogue
 }
 
 // Calculate points/sec!
@@ -57,22 +61,27 @@ function getPointGen() {
 	if (hasUpgrade('d', 24)) gain = gain.mul(upgradeEffect('d', 24))
 	gain = gain.mul(tmp.v.voltageEffect)
 	if (hasUpgrade('d', 51)) gain = gain.mul(upgradeEffect('d', 51))
+
 	return gain
 }
 
 // You can add non-layer related variables that should to into "player" and be saved here, along with default values
 function addedPlayerData() { return {
+	name: "Player"
 }}
 
 // Display extra things at the top of the page
 var displayThings = [
 	"Resets function similarly to The Game Dev Tree (Layers only reset along branches)",
-	"Reach 1e10000 points to beat the game!"
+	"Reach 1e10000 points to beat the game!",
+	() => {
+		if (player.m.inDialogue) {return "You are currently in dialogue, check the Meta Generator layer"}
+	},
 ]
 
 // Determines when the game "ends"
 function isEndgame() {
-	return player.points.gte(new Decimal("e280000000"))
+	return player.points.gte(new Decimal("e10000"))
 }
 
 
@@ -86,10 +95,17 @@ var backgroundStyle = {
 
 // You can change this if you have things that can be messed up by long tick lengths
 function maxTickLength() {
-	return(3600) // Default is 1 hour which is just arbitrarily large
+	return(60) // Default is 1 hour which is just arbitrarily large
 }
 
 // Use this if you need to undo inflation from an older version. If the version is older than the version that fixed the issue,
 // you can cap their current resources with this.
 function fixOldSave(oldVersion){
+	if (oldVersion <= "1.01") {
+		if (player.m.points.gte(2)) {
+			player.m.points = new Decimal(1)
+		}
+		player.m.metaTokens = new Decimal(1)
+		startDialogue("introduction1")
+	}
 }

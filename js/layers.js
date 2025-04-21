@@ -200,6 +200,183 @@ addLayer("achievements", {
             done() {return player.m.points.gte(1)},
             onComplete() {player.achievements.points = player.achievements.points.add(1)}
         },
+        61: {
+            name() {return "There Is No Metaverse"},
+            tooltip() {return "Purchase a Meta Upgrade."},
+            done() {return getBuyableAmount('m', 11).gte(1)},
+            onComplete() {player.achievements.points = player.achievements.points.add(1)},
+            unlocked() {return player.m.points.gte(1)}
+        },
+        62: {
+            name() {return "Super Effective"},
+            tooltip() {return "Have 3 or more Meta Generator Power effects active at the same time."},
+            done() {return player.m.upgrades.length >= 3},
+            onComplete() {player.achievements.points = player.achievements.points.add(1)},
+            unlocked() {return player.m.points.gte(1)}
+        },
+        63: {
+            name() {return "Not Again..."},
+            tooltip() {return "Complete a Meta Maintenance challenge."},
+            done() {return challengeCompletions('m', 11) >= 1},
+            onComplete() {player.achievements.points = player.achievements.points.add(1)},
+            unlocked() {return player.m.points.gte(1)}
+        },
+        64: {
+            name() {return "Another Set"},
+            tooltip() {return "Complete the first three Meta Maintenance challenges."},
+            done() {return challengeCompletions('m', 11) >= 1 && challengeCompletions('m', 21) >= 1 && challengeCompletions('m', 31) >= 1},
+            onComplete() {player.achievements.points = player.achievements.points.add(1)},
+            unlocked() {return player.m.points.gte(1)}
+        },
+        65: {
+            name() {return "Metamania"},
+            tooltip() {return "Have 6 or more Meta Generator Power effects active at the same time."},
+            done() {return player.m.upgrades.length >= 6},
+            onComplete() {player.achievements.points = player.achievements.points.add(1)},
+            unlocked() {return player.m.points.gte(1)}
+        },
+        71: {
+            name() {return "Maximized"},
+            tooltip() {return "Buy <b>Overpowered Generators</b> 5 times."},
+            done() {return getBuyableAmount('m', 11).gte(5)},
+            onComplete() {player.achievements.points = player.achievements.points.add(1)},
+            unlocked() {return player.m.points.gte(1)}
+        },
+        72: {
+            name() {return "Supertoken"},
+            tooltip() {return "Have more than 1000 Meta Tokens at a time."},
+            done() {return player.m.metaTokens.gte(1000)},
+            onComplete() {player.achievements.points = player.achievements.points.add(1)},
+            unlocked() {return player.m.points.gte(1)}
+        },
+        73: {
+            name() {return "Super Dynamo"},
+            tooltip() {return "Reach 100 dynamos."},
+            done() {return player.d.points.gte(100)},
+            onComplete() {player.achievements.points = player.achievements.points.add(1)},
+            unlocked() {return player.m.points.gte(1)}
+        },
+        74: {
+            name() {return "Conquered Set"},
+            tooltip() {return "Complete the second three Meta Maintenance challenges."},
+            done() {return challengeCompletions('m', 12) >= 1 && challengeCompletions('m', 22) >= 1 && challengeCompletions('m', 32) >= 1},
+            onComplete() {player.achievements.points = player.achievements.points.add(1)},
+            unlocked() {return player.m.points.gte(1)}
+        },
+        75: {
+            name() {return "Meta Madness"},
+            tooltip() {return "Have 10 or more Meta Generator Power effects active at the same time."},
+            done() {return player.m.upgrades.length >= 10},
+            onComplete() {player.achievements.points = player.achievements.points.add(1)},
+            unlocked() {return player.m.points.gte(1)}
+        },
+        
+        
+        /* 81: {
+            name() {return "Meta Charge"},
+            tooltip() {return "Charge the Generator Meta Battery to 1%."},
+            done() {return challengeCompletions('m', 61) > 0},
+            onComplete() {player.achievements.points = player.achievements.points.add(1)},
+            unlocked() {return player.m.points.gte(1)}
+        }, 
+        82: {
+            name() {return "Meta Voltage?"},
+            tooltip() {return "Purchase an Amplifier Meta Upgrade."},
+            done() {return false},
+            onComplete() {player.achievements.points = player.achievements.points.add(1)},
+            unlocked() {return player.m.points.gte(1)}
+        },
+        83: {
+            name() {return "You're Mature, Right?"},
+            tooltip() {return "Purchase 13 Meta Generator Power effects, and form them into a... funny shape."},
+            done() {return false},
+            onComplete() {player.achievements.points = player.achievements.points.add(1)},
+            unlocked() {return player.m.points.gte(1)}
+        },
+        84: {
+            name() {return ""},
+            tooltip() {return ""},
+            done() {return false},
+            onComplete() {player.achievements.points = player.achievements.points.add(1)},
+            unlocked() {return player.m.points.gte(1)}
+        },
+        85: {
+            name() {return ""},
+            tooltip() {return ""},
+            done() {return false},
+            onComplete() {player.achievements.points = player.achievements.points.add(1)},
+            unlocked() {return player.m.points.gte(1)}
+        },
+        91: {
+            name() {return ""},
+            tooltip() {return ""},
+            done() {return false},
+            onComplete() {player.achievements.points = player.achievements.points.add(1)},
+            unlocked() {return player.m.points.gte(1)}
+        },
+        92: {
+            name() {return ""},
+            tooltip() {return ""},
+            done() {return false},
+            onComplete() {player.achievements.points = player.achievements.points.add(1)},
+            unlocked() {return player.m.points.gte(1)}
+        },
+        93: {
+            name() {return ""},
+            tooltip() {return ""},
+            done() {return false},
+            onComplete() {player.achievements.points = player.achievements.points.add(1)},
+            unlocked() {return player.m.points.gte(1)}
+        },
+        94: {
+            name() {return ""},
+            tooltip() {return ""},
+            done() {return false},
+            onComplete() {player.achievements.points = player.achievements.points.add(1)},
+            unlocked() {return player.m.points.gte(1)}
+        },
+        95: {
+            name() {return ""},
+            tooltip() {return ""},
+            done() {return false},
+            onComplete() {player.achievements.points = player.achievements.points.add(1)},
+            unlocked() {return player.m.points.gte(1)}
+        }, 
+        101: {
+            name() {return "Finally, It's Glorious!"},
+            tooltip() {return "Earn a Glorious Generator."},
+            done() {return false},
+            onComplete() {player.achievements.points = player.achievements.points.add(1)},
+            unlocked() {return player.m.points.gte(1)}
+        },
+        102: {
+            name() {return ""},
+            tooltip() {return ""},
+            done() {return false},
+            onComplete() {player.achievements.points = player.achievements.points.add(1)},
+            unlocked() {return player.m.points.gte(1)}
+        },
+        103: {
+            name() {return ""},
+            tooltip() {return ""},
+            done() {return false},
+            onComplete() {player.achievements.points = player.achievements.points.add(1)},
+            unlocked() {return player.m.points.gte(1)}
+        },
+        104: {
+            name() {return ""},
+            tooltip() {return ""},
+            done() {return false},
+            onComplete() {player.achievements.points = player.achievements.points.add(1)},
+            unlocked() {return player.m.points.gte(1)}
+        },
+        105: {
+            name() {return "Goodbye, Generators!"},
+            tooltip() {return "Beat the game."},
+            done() {return false},
+            onComplete() {player.achievements.points = player.achievements.points.add(1)},
+            unlocked() {return player.m.points.gte(1)}
+        }, */
     },
 
     update(diff) {
@@ -243,11 +420,12 @@ addLayer("g", {
         unlocked: true,
 		points: new Decimal(0),
         generatorPower: new Decimal(0),
+        best: new Decimal(0),
 
         pseudoUnlocks: []
     }},
 
-    requires: new Decimal(10), 
+    requires() {return inChallenge('m', 22) ? Decimal.dInf : new Decimal(10)}, 
     resource: "generators", 
     baseResource: "points", 
     baseAmount() {return player.points}, 
@@ -257,6 +435,7 @@ addLayer("g", {
         if (player.g.points.gte(10)) exp = new Decimal(1.6)
         if (player.g.points.gte(100)) exp = new Decimal(1.625)
         if (player.g.points.gte(200)) exp = new Decimal(1.645)
+        if (inChallenge('m', 31)) exp = new Decimal(2)
         return exp
     }, 
     hotkeys: [
@@ -268,11 +447,17 @@ addLayer("g", {
         }
     },
 
+    tooltip() {return format(player.g.points, 0) + " generators (" + format(tmp.g.generatorBase) + "^,  +" +  format(tmp.g.freeGens) + ", " + format(tmp.g.generatorEffectiveness.mul(100)) + "%)"},
+
     resetsNothing() {return hasMilestone('a', 0) || hasMilestone('d', 0)},
+    canBuyMax() {return hasMilestone('a', 0) || hasMilestone('d', 0)},
     autoPrestige() {return hasUpgrade('a', 31) || hasUpgrade('d', 31)},
 
     gainMult() { 
         mult = new Decimal(1)
+        if (hasUpgrade('m', 11)) mult = mult.div(upgradeEffect('m', 11))
+        if (inChallenge('m', 61)) mult = mult.pow(2)
+        /* mult = mult.div(challengeEffect('m', 61)[1]) */
         return mult
     },
     generatorBase() {
@@ -285,6 +470,9 @@ addLayer("g", {
         }
         if (player.a.alternatingCurrent.gte(1)) base = base.add(tmp.a.altCurEffect)
         base = base.add(buyableEffect('c', 11))
+        if (hasUpgrade('m', 12)) base = base.add(upgradeEffect('m', 12))
+        /* if (inChallenge('m', 61)) base = base.pow(0.5)
+        base = base.add(challengeEffect('m', 61)[0]) */
         return base
     },
     freeGens() {
@@ -295,6 +483,9 @@ addLayer("g", {
         }
         if (player.d.directCurrent.gte(1)) gens = gens.add(tmp.d.dirCurEffect)
         gens = gens.add(buyableEffect('c', 11))
+        if (hasUpgrade('m', 13)) gens = gens.add(upgradeEffect('m', 13))
+        /* if (inChallenge('m', 61)) gens = gens.pow(0.5)
+        gens = gens.add(challengeEffect('m', 61)[0]) */
         return gens
     },
     effect() {
@@ -305,6 +496,9 @@ addLayer("g", {
             if (hasUpgrade('g', 43)) effect = effect.mul(upgradeEffect('g', 43))
         }
     	effect = effect.mul(tmp.v.voltageEffect)
+        if (inChallenge('m', 11)) {
+            effect = new Decimal(0)
+        }
         return effect
     },
     effectDescription() {
@@ -326,6 +520,9 @@ addLayer("g", {
         if (hasUpgrade('v', 11)) mult = mult.add(upgradeEffect('v', 11))
         if (hasUpgrade('v', 24)) mult = mult.add(upgradeEffect('v', 24))
         if (challengeCompletions('c', 11) > 0) mult = mult.add(challengeEffect('c', 11))
+        if (hasUpgrade('m', 14)) mult = mult.add(upgradeEffect('m', 14))
+        /* if (inChallenge('m', 61)) mult = mult.pow(0.5)
+        mult = mult.add(challengeEffect('m', 61)[2]) */
         return mult
     },
 
@@ -406,7 +603,8 @@ addLayer("g", {
         }
       
         let keep = [];
-      
+        keep.push("best")
+
         layerDataReset(this.layer, keep);
       
         player[this.layer].upgrades.push(...keptUpgrades)
@@ -419,6 +617,7 @@ addLayer("g", {
             cost: new Decimal(3),
             effect() {
                 let effect = player.g.points.pow(0.9).add(1)
+                effect = effect.mul(buyableEffect('m', 11))
                 return effect
             },
             unlocked() {return true}
@@ -429,6 +628,7 @@ addLayer("g", {
             cost: new Decimal(5),
             effect() {
                 let effect = player.points.add(1).log(2).add(1)
+                effect = effect.mul(buyableEffect('m', 12))
                 return effect
             },
             unlocked() {return hasUpgrade('g', 11)}
@@ -439,6 +639,7 @@ addLayer("g", {
             cost: new Decimal(7),
             effect() {
                 let effect = player.g.generatorPower.add(1).pow(0.1).log(10).add(1)
+                effect = effect.mul(buyableEffect('m', 13))
                 return effect
             },
             unlocked() {return hasUpgrade('g', 12)}
@@ -449,6 +650,7 @@ addLayer("g", {
             cost: new Decimal(9),
             effect() {
                 let effect = new Decimal(2)
+                effect = effect.mul(buyableEffect('m', 14))
                 return effect
             },
             unlocked() {return hasUpgrade('g', 13)}
@@ -459,6 +661,7 @@ addLayer("g", {
             cost: new Decimal(250),
             effect() {
                 let effect = player.g.generatorPower.add(1).log10().div(5)
+                effect = effect.mul(buyableEffect('m', 21))
                 return effect
             },
             unlocked() {return hasUpgrade('g', 11)},
@@ -471,7 +674,8 @@ addLayer("g", {
             description() {return "Points multiply themselves. Effect: x" + format(this.effect())},
             cost: new Decimal(1000),
             effect() {
-                let effect = player.points.add(1).log10().add(1)
+                let effect = player.points.add(1).log10().add(1)                
+                effect = effect.mul(buyableEffect('m', 22))
                 return effect
             },
             unlocked() {return hasUpgrade('g', 21)},
@@ -485,6 +689,7 @@ addLayer("g", {
             cost: new Decimal(25000),
             effect() {
                 let effect = tmp.g.generatorBase.pow(2)
+                effect = effect.mul(buyableEffect('m', 23))
                 return effect
             },
             unlocked() {return hasUpgrade('g', 22)},
@@ -498,6 +703,7 @@ addLayer("g", {
             cost: new Decimal(5000000),
             effect() {
                 let effect = tmp.g.effect.pow(0.25).add(1)
+                effect = effect.mul(buyableEffect('m', 24))
                 return effect
             },
             unlocked() {return hasUpgrade('g', 23)},
@@ -529,7 +735,7 @@ addLayer("g", {
         },
         33: {
             title: "Voltage!",
-            description() {return "Unlock the Amplifier layer. Amplifiers produce Voltage which greatly speed up point, generator power, AC, and DC generation."},
+            description() {return "Unlock the Amplifier layer. Amplifiers produce Voltage which greatly speeds up point, generator power, AC, and DC generation."},
             cost: new Decimal(1e145),
             unlocked() {return hasUpgrade('g', 44)},
             currencyLayer: "a",
@@ -790,7 +996,7 @@ addLayer("g", {
 
     ],
     update(diff) {
-        player.g.generatorPower = player.g.generatorPower.add(tmp.g.effect.mul(diff))
+        if (!player.m.inDialogue) player.g.generatorPower = player.g.generatorPower.add(tmp.g.effect.mul(diff))
     }
 })
 addLayer("a", {
@@ -807,6 +1013,7 @@ addLayer("a", {
         unlocked: false,
 		points: new Decimal(0),
         alternatingCurrent: new Decimal(0),
+        best: new Decimal(0),
         unlockOrder: 1,
 
         pseudoUnlocks: []
@@ -816,7 +1023,7 @@ addLayer("a", {
         if (player.a.unlockOrder == 2) {
             return new Decimal(1e36)
         } else {
-            return new Decimal(1e12)
+            return inChallenge('m', 22) ? Decimal.dInf : new Decimal(1e12)
         }
     }, 
     resource: "alternators", 
@@ -839,7 +1046,10 @@ addLayer("a", {
         }
     },
 
+    tooltip() {return format(player.a.points, 0) + " alternators (" + format(tmp.a.alternatorBase) + "^,  +" +  format(tmp.a.freeAlts) + ")"},
+
     resetsNothing() {return hasMilestone('c', 7)},
+    canBuyMax() {return hasMilestone('c', 7)},
     autoPrestige() {return hasMilestone('v', 2)},
 
     doReset(resettingLayer) {
@@ -871,7 +1081,9 @@ addLayer("a", {
                 if (hasUpgrade(this.layer, 54)) keptUpgrades.push(54)
             }
         }
-        let keep = ["milestones"];
+        let keep = [];
+        keep.push("milestones")
+        keep.push("best")
       
         layerDataReset(this.layer, keep);
       
@@ -880,6 +1092,7 @@ addLayer("a", {
 
     gainMult() { 
         mult = new Decimal(1)
+        if (hasUpgrade('m', 21)) mult = mult.div(upgradeEffect('m', 21))
         return mult
     },
     alternatorBase() {
@@ -891,6 +1104,7 @@ addLayer("a", {
             if (hasUpgrade('d', 53)) base = base.add(upgradeEffect('d', 53))
         }
         base = base.add(buyableEffect('c', 12))
+        if (hasUpgrade('m', 22)) base = base.add(upgradeEffect('m', 22))
         return base
     },
     freeAlts() {
@@ -901,18 +1115,30 @@ addLayer("a", {
         }
         if (challengeCompletions('c', 13) > 0) alts = alts.add(challengeEffect('c', 13))
         alts = alts.add(buyableEffect('c', 12))
+        if (hasUpgrade('m', 23)) alts = alts.add(upgradeEffect('m', 23))
+        if (inChallenge('m', 21)) alts = alts.sub(tmp.a.alternatorBase).max(new Decimal(0))
         return alts
     },
     effect() {
         let effect = tmp.a.alternatorBase.pow(player.a.points.add(tmp.a.freeAlts)).sub(1)
+        if (inChallenge('m', 31)) {
+            effect = tmp.d.dynamoBase.pow(player.d.points.add(tmp.d.freeDynas)).sub(1)
+        }
         if (!inChallenge('c', 13)) {
             if (hasUpgrade('a', 13)) effect = effect.mul(upgradeEffect('a', 13))
             if (hasUpgrade('v', 32)) effect = effect.mul(upgradeEffect('v', 32)[1])
         }
         effect = effect.mul(tmp.v.voltageEffect)
+        if (hasUpgrade('m', 24)) effect = effect.mul(upgradeEffect('m', 24))
+        if (inChallenge('m', 12)) {
+            effect = new Decimal(0)
+        }
         return effect
     },
     effectDescription() {
+        if (inChallenge('m', 31)) {
+            return "which are generating " + format(tmp.d.effect) + " <s>alternating</s> direct current per second"
+        }
         return "which are generating " + format(tmp.a.effect) + " alternating current per second"
     },
     altCurEffect() {
@@ -923,7 +1149,7 @@ addLayer("a", {
     milestones: {
         0: {
             requirementDescription: "3 alternators",
-            effectDescription: "Generators reset nothing",
+            effectDescription: "Generators reset nothing. You can buy max generators up to your best amount.",
             done() { return player.a.points.gte(3) }
         },
         1: {
@@ -945,6 +1171,7 @@ addLayer("a", {
             cost: new Decimal(3),
             effect() {
                 let effect = player.a.alternatingCurrent.add(1).pow(0.25)
+                effect = effect.mul(buyableEffect('m', 31))
                 return effect
             },
             unlocked() {return true}
@@ -955,6 +1182,7 @@ addLayer("a", {
             cost: new Decimal(4),
             effect() {
                 let effect = player.a.points.add(1).pow(1.5)
+                effect = effect.mul(buyableEffect('m', 32))
                 return effect
             },
             unlocked() {return hasUpgrade('a', 11)}
@@ -965,6 +1193,7 @@ addLayer("a", {
             cost: new Decimal(7),
             effect() {
                 let effect = player.g.generatorPower.add(1).log(5).add(1)
+                effect = effect.mul(buyableEffect('m', 33))
                 return effect
             },
             unlocked() {return hasUpgrade('a', 12)}
@@ -975,6 +1204,7 @@ addLayer("a", {
             cost: new Decimal(11),
             effect() {
                 let effect = tmp.g.generatorBase.pow(0.2)
+                effect = effect.mul(buyableEffect('m', 34))
                 return effect
             },
             unlocked() {return hasUpgrade('a', 23)}
@@ -985,6 +1215,7 @@ addLayer("a", {
             cost: new Decimal(50000),
             effect() {
                 let effect = player.a.alternatingCurrent.add(1).log10().div(5)
+                effect = effect.mul(buyableEffect('m', 41))
                 return effect
             },
             unlocked() {return hasUpgrade('a', 13)},
@@ -998,6 +1229,7 @@ addLayer("a", {
             cost: new Decimal(5000000),
             effect() {
                 let effect = player.a.alternatingCurrent.add(1).log(15).div(5)
+                effect = effect.mul(buyableEffect('m', 42))
                 return effect
             },
             unlocked() {return hasUpgrade('a', 21)},
@@ -1011,6 +1243,7 @@ addLayer("a", {
             cost: new Decimal(1e10),
             effect() {
                 let effect = player.g.generatorPower.add(1).log(5).div(25).add(1)
+                effect = effect.mul(buyableEffect('m', 43))
                 return effect
             },
             unlocked() {return hasUpgrade('a', 22)},
@@ -1024,6 +1257,7 @@ addLayer("a", {
             cost: new Decimal(5e13),
             effect() {
                 let effect = tmp.a.effect.add(1).log(4).add(1)
+                effect = effect.mul(buyableEffect('m', 44))
                 return effect
             },
             unlocked() {return hasUpgrade('a', 22)},
@@ -1332,7 +1566,7 @@ addLayer("a", {
 
     ],
     update(diff) {
-        player.a.alternatingCurrent = player.a.alternatingCurrent.add(tmp.a.effect.mul(diff))
+        if (!player.m.inDialogue) player.a.alternatingCurrent = player.a.alternatingCurrent.add(tmp.a.effect.mul(diff))
     }
 })
 addLayer("d", {
@@ -1348,6 +1582,7 @@ addLayer("d", {
         unlocked: false,
 		points: new Decimal(0),
         directCurrent: new Decimal(0),
+        best: new Decimal(0),
         unlockOrder: 1,
 
         pseudoUnlocks: []
@@ -1357,7 +1592,7 @@ addLayer("d", {
         if (player.d.unlockOrder == 2) {
             return new Decimal(1e30)
         } else {
-            return new Decimal(1e10)
+            return inChallenge('m', 22) ? Decimal.dInf : new Decimal(1e10)
         }
     }, // 1e30 if alternators are unlocked first
     resource: "dynamos", 
@@ -1374,12 +1609,15 @@ addLayer("d", {
         {key: "d", description: "D: Reset for dynamos", onPress(){if (canReset(this.layer)) doReset(this.layer)}, unlocked() {return player.d.unlocked}},
     ],
     onPrestige() {
-	if (!tmp.d.resetsNothing) {
-		player.d.directCurrent = new Decimal(0)
-	}
+        if (!tmp.d.resetsNothing) {
+            player.d.directCurrent = new Decimal(0)
+        }
     },
 
+    tooltip() {return format(player.d.points, 0) + " dynamos (" + format(tmp.d.dynamoBase) + "^,  +" +  format(tmp.d.freeDynas) + ")"},
+
     resetsNothing() {return hasMilestone('c', 0)},
+    canBuyMax() {return hasMilestone('c', 0)},
     autoPrestige() {return hasMilestone('c', 3)},
 
     doReset(resettingLayer) {
@@ -1411,8 +1649,10 @@ addLayer("d", {
                 if (hasUpgrade(this.layer, 54)) keptUpgrades.push(54)
             }
         }
-        let keep = ["milestones"];
-      
+        let keep = [];
+        keep.push("milestones")
+        keep.push("best")
+        
         layerDataReset(this.layer, keep);
       
         player[this.layer].upgrades.push(...keptUpgrades)
@@ -1420,6 +1660,7 @@ addLayer("d", {
 
     gainMult() { 
         mult = new Decimal(1)
+        if (hasUpgrade('m', 31)) mult = mult.div(upgradeEffect('m', 31))
         return mult
     },
     dynamoBase() {
@@ -1431,6 +1672,8 @@ addLayer("d", {
             if (hasUpgrade('v', 13)) base = base.add(upgradeEffect('v', 13))
         }
         base = base.add(buyableEffect('c', 13))
+        if (hasUpgrade('m', 32)) base = base.add(upgradeEffect('m', 32))
+        if (inChallenge('m', 32)) base = base.sub(tmp.d.freeDynas).max(new Decimal(1.1))
         return base
     },
     freeDynas() {
@@ -1440,19 +1683,30 @@ addLayer("d", {
         }
         if (challengeCompletions('c', 12) > 0) dynas = dynas.add(challengeEffect('c', 12))
         dynas = dynas.add(buyableEffect('c', 13))
+        if (hasUpgrade('m', 33)) dynas = dynas.add(upgradeEffect('m', 33))
         return dynas
     },
     effect() {
         let effect = tmp.d.dynamoBase.pow(player.d.points.add(tmp.d.freeDynas)).sub(1)
+        if (inChallenge('m', 31)) {
+            effect = tmp.a.alternatorBase.pow(player.a.points.add(tmp.a.freeAlts)).sub(1)
+        }
         if (!inChallenge('c', 12)) {
             if (hasUpgrade('d', 13)) effect = effect.mul(upgradeEffect('d', 13))
             if (hasUpgrade('g', 42)) effect = effect.mul(upgradeEffect('d', 42))
             if (hasUpgrade('v', 32)) effect = effect.mul(upgradeEffect('v', 32)[0])
         }
         effect = effect.mul(tmp.v.voltageEffect)
+        if (hasUpgrade('m', 34)) effect = effect.mul(upgradeEffect('m', 34))
+        if (inChallenge('m', 12)) {
+            effect = new Decimal(0)
+        }
         return effect
     },
     effectDescription() {
+        if (inChallenge('m', 31)) {
+            return "which are generating " + format(tmp.d.effect) + " <s>direct</s> alternating current per second"
+        }
         return "which are generating " + format(tmp.d.effect) + " direct current per second"
     },
     dirCurEffect() {
@@ -1463,7 +1717,7 @@ addLayer("d", {
     milestones: {
         0: {
             requirementDescription: "3 dynamos",
-            effectDescription: "Generators reset nothing",
+            effectDescription: "Generators reset nothing. You can buy max generators up to your best amount.",
             done() { return player.d.points.gte(3) }
         },
         1: {
@@ -1485,6 +1739,7 @@ addLayer("d", {
             cost: new Decimal(3),
             effect() {
                 let effect = player.d.directCurrent.add(1).pow(0.25)
+                effect = effect.mul(buyableEffect('m', 51))
                 return effect
             },
             unlocked() {return true}
@@ -1495,6 +1750,7 @@ addLayer("d", {
             cost: new Decimal(4),
             effect() {
                 let effect = player.d.points.add(1).pow(1.5)
+                effect = effect.mul(buyableEffect('m', 52))
                 return effect
             },
             unlocked() {return hasUpgrade('d', 11)}
@@ -1505,6 +1761,7 @@ addLayer("d", {
             cost: new Decimal(7),
             effect() {
                 let effect = player.g.generatorPower.add(1).log(5).add(1)
+                effect = effect.mul(buyableEffect('m', 53))
                 return effect
             },
             unlocked() {return hasUpgrade('d', 12)}
@@ -1515,6 +1772,7 @@ addLayer("d", {
             cost: new Decimal(11),
             effect() {
                 let effect = tmp.g.freeGens.pow(0.2)
+                effect = effect.mul(buyableEffect('m', 54))
                 return effect
             },
             unlocked() {return hasUpgrade('d', 23)}
@@ -1525,6 +1783,7 @@ addLayer("d", {
             cost: new Decimal(50000),
             effect() {
                 let effect = player.d.directCurrent.add(1).log10().div(5)
+                effect = effect.mul(buyableEffect('m', 61))
                 return effect
             },
             unlocked() {return hasUpgrade('d', 12)},
@@ -1538,6 +1797,7 @@ addLayer("d", {
             cost: new Decimal(5000000),
             effect() {
                 let effect = player.d.directCurrent.add(1).log(15).div(5)
+                effect = effect.mul(buyableEffect('m', 62))
                 return effect
             },
             unlocked() {return hasUpgrade('d', 21)},
@@ -1551,6 +1811,7 @@ addLayer("d", {
             cost: new Decimal(1e10),
             effect() {
                 let effect = tmp.g.freeGens.add(1).log(10).div(10).add(1)
+                effect = effect.mul(buyableEffect('m', 63))
                 return effect
             },
             unlocked() {return hasUpgrade('d', 22)},
@@ -1564,6 +1825,7 @@ addLayer("d", {
             cost: new Decimal(5e13),
             effect() {
                 let effect = tmp.d.effect.add(1).log(4).add(1)
+                effect = effect.mul(buyableEffect('m', 64))
                 return effect
             },
             unlocked() {return hasUpgrade('d', 23)},
@@ -1684,7 +1946,7 @@ addLayer("d", {
             fullDisplay() { 
                 if (!player[this.layer].pseudoUnlocks.includes(this.id)) {return " \
                     <h3>Explore A New Upgrade</h3> \
-                    <p>Req: 50 dynamos without dynamo upgrades. (Hint: Use <b>Dynamo Maintenance</b>).</p> \
+                    <p>Req: 50 dynamos without dynamo upgrades. (Hint: Enter and exit <b>Dynamo Maintenance</b>).</p> \
                 "} else {return " \
                     <h3>Dynamic Generation II</h3> \
                     <p>Dynamo effect multiplies AC generation at a reduced rate. Effect: x" + format(this.effect()) + "</p><br> \
@@ -1872,7 +2134,7 @@ addLayer("d", {
 
     ],
     update(diff) {
-        player.d.directCurrent = player.d.directCurrent.add(tmp.d.effect.mul(diff))
+        if (!player.m.inDialogue) player.d.directCurrent = player.d.directCurrent.add(tmp.d.effect.mul(diff))
     }
 })
 addLayer("c", {
@@ -1890,10 +2152,12 @@ addLayer("c", {
         unlocked: false,
 		points: new Decimal(0),
         charge: new Decimal(0),
+        best: new Decimal(0),
+
         resetTime: 1
     }},
 
-    requires: new Decimal(1e36) ,
+    requires() {return inChallenge('m', 22) ? Decimal.dInf : new Decimal(1e36)},
     resource: "chargers", 
     baseResource: "direct current", 
     baseAmount() {return player.d.directCurrent}, 
@@ -1901,6 +2165,7 @@ addLayer("c", {
     exponent() {
         let exp = new Decimal(1.25)
         if (player.c.points.gte(10)) exp = exp.add(0.5)
+        if (player.c.points.gte(50)) exp = exp.add(0.05)
         return exp
     }, 
     hotkeys: [
@@ -1910,17 +2175,36 @@ addLayer("c", {
         player.c.charge = new Decimal(0)
     },
 
+    tooltip() {return format(player.c.points, 0) + " chargers (" + format(tmp.c.chargerBase) + "^,  +" +  format(tmp.c.freeChargers) + ")"},
+
+    canBuyMax() {return challengeCompletions('m', 11) >= 1},
+
     doReset(resettingLayer) {
         if (layers[resettingLayer].row <= this.row) return;
       
-        let keep = ["milestones"];
-      
+        let keep = [];
+        keep.push("milestones")
+        keep.push("best")
+        if (challengeCompletions('m', 22) >= 1) keep.push("buyables")
+
+        let challengeKeep = [0, 0, 0];
+        if (challengeCompletions('m', 11) >= 1) challengeKeep[0] = (challengeCompletions('c', 11))
+        if (challengeCompletions('m', 21) >= 1) challengeKeep[1] = (challengeCompletions('c', 12))
+        if (challengeCompletions('m', 21) >= 1) challengeKeep[2] = (challengeCompletions('c', 13))
+
+
         layerDataReset(this.layer, keep);
-      
+
+        player.c.challenges[11] = challengeKeep[0]
+        player.c.challenges[12] = challengeKeep[1]
+        player.c.challenges[13] = challengeKeep[2]
+
+
     },
 
     gainMult() { 
         mult = new Decimal(125).pow(player.c.points).pow(2)
+        if (hasUpgrade('m', 41)) mult = mult.div(upgradeEffect('m', 41))
         return mult
     },
     chargerBase() { 
@@ -1930,6 +2214,8 @@ addLayer("c", {
         if (hasUpgrade('a', 54)) base = base.add(upgradeEffect('a', 54))
         if (hasUpgrade('v', 33)) base = base.add(upgradeEffect('v', 33))
         base = base.add(buyableEffect('c', 22))
+        if (hasUpgrade('m', 42)) base = base.add(upgradeEffect('m', 42))
+        if (challengeCompletions('m', 31) >= 1) base = base.add(0.5)
         return base
     },
     freeChargers() {
@@ -1938,6 +2224,8 @@ addLayer("c", {
         if (hasUpgrade('a', 54)) chargers = chargers.add(upgradeEffect('a', 54))
         if (hasUpgrade('v', 34)) chargers = chargers.add(upgradeEffect('v', 34))
         chargers = chargers.add(buyableEffect('c', 22))
+        if (hasUpgrade('m', 43)) chargers = chargers.add(upgradeEffect('m', 43))
+        if (challengeCompletions('m', 31) >= 1) chargers = chargers.add(1.5)
         return chargers
     },
     effect() {
@@ -1945,6 +2233,10 @@ addLayer("c", {
         if (hasUpgrade('v', 14)) effect = effect.mul(upgradeEffect('v', 14))
         if (hasUpgrade('a', 51)) effect = effect.mul(upgradeEffect('a', 51))
         if (hasUpgrade('v', 31)) effect = effect.mul(upgradeEffect('v', 31)[0])
+        if (hasUpgrade('m', 44)) effect = effect.mul(upgradeEffect('m', 44))
+        if (inChallenge('m', 12)) {
+            effect = new Decimal(0)
+        }
         return effect
     },
     effectDescription() {
@@ -1960,13 +2252,14 @@ addLayer("c", {
         if (hasUpgrade('a', 51)) limit = limit.mul(upgradeEffect('a', 51))
         if (hasUpgrade('a', 53)) limit = limit.mul(upgradeEffect('a', 53))
         if (hasUpgrade('v', 31)) limit = limit.mul(upgradeEffect('v', 31)[0])
+        if (hasUpgrade('m', 44)) limit = limit.mul(upgradeEffect('m', 44))
         return limit
     },
 
     milestones: {
         0: {
             requirementDescription: "3 chargers",
-            effectDescription: "Dynamos reset nothing",
+            effectDescription: "Dynamos reset nothing. You can buy max dynamos up to your best amount.",
             done() { return player.c.points.gte(3) }
         },
         1: {
@@ -2002,9 +2295,9 @@ addLayer("c", {
             unlocked() {return hasMilestone('c', 2)}
         },  
         7: {
-            requirementDescription: "3 alternator maintenance completions",
-            effectDescription: "Alternators reset nothing.",
-            done() { return challengeCompletions('c', 13) > 2  },
+            requirementDescription: "1 alternator maintenance completion",
+            effectDescription: "Alternators reset nothing. You can buy max alternators up to your best amount.",
+            done() { return challengeCompletions('c', 13) > 0  },
             unlocked() {return hasMilestone('c', 4)}
         },  
         8: {
@@ -2015,7 +2308,7 @@ addLayer("c", {
         },  
         9: {
             requirementDescription: "100% charged Dynamo Battery",
-            effectDescription: "Unlock 2 more batteries. Force amplifier reset button no longer resets alternator/generator content. ",
+            effectDescription: "Unlock 2 more batteries.",
             done() { return getBuyableAmount('c', 13).gte(100) },
             unlocked() {return hasMilestone('v', 3)}
         },  
@@ -2053,7 +2346,7 @@ addLayer("c", {
                 req = req.add(new Decimal(challengeCompletions('c', 11)).mul(2.5).floor())
                 return req
             },
-            onEnter() {player.g.upgrades = [31, 32]; if (hasUpgrade('g', 33)) {player.g.upgrades = [31, 32, 33]}; player.c.charge = new Decimal(0)},
+            onEnter() {player.g.upgrades = [31, 32]; if (hasUpgrade('g', 33)) {player.g.upgrades = [31, 32, 33]}; player.c.charge = new Decimal(0); player.g.best = new Decimal(0)},
             completionLimit: new Decimal(10),
             unlocked() {return hasMilestone('c', 1)}
         },
@@ -2076,7 +2369,7 @@ addLayer("c", {
                 req = req.add(new Decimal(new Decimal(challengeCompletions('c', 12)).mul(1.1).floor()))
                 return req
             },
-            onEnter() {player.d.upgrades = [31]; player.d.unlockOrder = 2; player.c.charge = new Decimal(0)},
+            onEnter() {player.d.upgrades = [31]; player.d.unlockOrder = 2; player.a.unlockOrder = 1; player.c.charge = new Decimal(0); player.d.best = new Decimal(0)},
             onExit() {player.d.unlockOrder = 1},
             completionLimit: new Decimal(10),
             unlocked() {return hasMilestone('c', 2)}
@@ -2100,7 +2393,7 @@ addLayer("c", {
                 req = req.add(new Decimal(new Decimal(challengeCompletions('c', 13)).mul(2)))
                 return req
             },
-            onEnter() {player.a.upgrades = [31]; player.a.unlockOrder = 2; player.a.points = new Decimal(0);  player.a.alternatingCurrent = new Decimal(0); player.c.charge = new Decimal(0);},
+            onEnter() {player.a.upgrades = [31]; player.a.unlockOrder = 2; player.d.unlockOrder = 1; player.a.points = new Decimal(0);  player.a.alternatingCurrent = new Decimal(0); player.c.charge = new Decimal(0); player.a.best = new Decimal(0)},
             onExit() {player.a.unlockOrder = 1},
             completionLimit: new Decimal(10),
             unlocked() {return hasMilestone('c', 4)}
@@ -2114,14 +2407,14 @@ addLayer("c", {
             display() { return "Increasing free generators and the generator base by " + format(this.effect()) + "<br>Next % at " + format(this.cost()) + " charge" },
             canAfford() { return player.c.charge.gte(this.cost()) },
             buy() {
-                player.c.charge = player.c.charge.sub(this.cost())
                 setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(1))
             },
             effect() {
                 let effect = getBuyableAmount(this.layer, this.id).pow(0.5).mul(4)
                 return effect
             },
-            purchaseLimit() {return new Decimal(100)}
+            purchaseLimit() {return new Decimal(100)},
+            unlocked() {return hasMilestone('v', 3)}
         },
         12: {
             title() {return "Alternator Battery (" + format(getBuyableAmount(this.layer, this.id), 0) + "/100%)"},
@@ -2129,14 +2422,14 @@ addLayer("c", {
             display() { return "Increasing free alternators and the alterator base by " + format(this.effect()) + "<br>Next % at " + format(this.cost()) + " charge" },
             canAfford() { return player.c.charge.gte(this.cost()) },
             buy() {
-                player.c.charge = player.c.charge.sub(this.cost())
-                setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(1))
+                setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(1))         
             },
             effect() {
                 let effect = getBuyableAmount(this.layer, this.id).pow(0.5).mul(3)
                 return effect
             },
-            purchaseLimit() {return new Decimal(100)}
+            purchaseLimit() {return new Decimal(100)},
+            unlocked() {return hasMilestone('v', 3)}
         },
         13: {
             title() {return "Dynamo Battery (" + format(getBuyableAmount(this.layer, this.id), 0) + "/100%)"},
@@ -2144,14 +2437,14 @@ addLayer("c", {
             display() { return "Increasing free dynamos and the dynamo base by " + format(this.effect()) + "<br>Next % at " + format(this.cost()) + " charge" },
             canAfford() { return player.c.charge.gte(this.cost()) },
             buy() {
-                player.c.charge = player.c.charge.sub(this.cost())
-                setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(1))
+                setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(1))            
             },
             effect() {
                 let effect = getBuyableAmount(this.layer, this.id).pow(0.5).mul(2)
                 return effect
             },
-            purchaseLimit() {return new Decimal(100)}
+            purchaseLimit() {return new Decimal(100)},
+            unlocked() {return hasMilestone('v', 3)}
         },
         21: {
             title() {return "Amplifier Battery (" + format(getBuyableAmount(this.layer, this.id), 0) + "/100%)"},
@@ -2159,8 +2452,7 @@ addLayer("c", {
             display() { return "Increasing free amplifiers and the amplifier base by " + format(this.effect()) + "<br>Next % at " + format(this.cost()) + " charge" },
             canAfford() { return player.c.charge.gte(this.cost()) },
             buy() {
-                player.c.charge = player.c.charge.sub(this.cost())
-                setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(1))
+                setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(1))   
             },
             effect() {
                 let effect = getBuyableAmount(this.layer, this.id).pow(0.5).mul(0.025)
@@ -2175,8 +2467,7 @@ addLayer("c", {
             display() { return "Increasing free chargers and the charger base by " + format(this.effect()) + "<br>Next % at " + format(this.cost()) + " charge" },
             canAfford() { return player.c.charge.gte(this.cost()) },
             buy() {
-                player.c.charge = player.c.charge.sub(this.cost())
-                setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(1))
+                setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(1))    
             },
             effect() {
                 let effect = getBuyableAmount(this.layer, this.id).pow(0.5).mul(0.075)
@@ -2230,7 +2521,7 @@ addLayer("c", {
         ["microtabs", "chargeMicrotabs"],
     ],
     update(diff) {
-        player.c.charge = player.c.charge.add(tmp.c.effect.mul(diff)).min(tmp.c.chargeLimit)
+        if (!player.m.inDialogue) player.c.charge = player.c.charge.add(tmp.c.effect.mul(diff)).min(tmp.c.chargeLimit)
     }
 })
 addLayer("v", {
@@ -2247,10 +2538,12 @@ addLayer("v", {
 		points: new Decimal(0),
         voltage: new Decimal(0),
         resetTime: 1,
+        voltageOverflowTime: 0,
+        best: new Decimal(0),
 
         pseudoUnlocks: []
     }},
-    requires: new Decimal(1e145) ,
+    requires() {return inChallenge('m', 22) ? Decimal.dInf : new Decimal(1e145)},
     resource: "amplifiers", 
     baseResource: "alternating current", 
     baseAmount() {return player.a.alternatingCurrent}, 
@@ -2258,6 +2551,7 @@ addLayer("v", {
     exponent() {
         let exp = new Decimal(1.25)
         if (player.v.points.gte(15)) exp = exp.add(0.25)
+        if (player.v.points.gte(25)) exp = exp.add(0.25)
         return exp
     }, 
     hotkeys: [
@@ -2267,17 +2561,23 @@ addLayer("v", {
         player.v.voltage = new Decimal(0)
     },
 
+    tooltip() {return format(player.v.points, 0) + " amplifiers (" + format(tmp.v.amplifierBase) + "^,  +" +  format(tmp.v.freeChargers) + ")"},
+
+    canBuyMax() {return challengeCompletions('m', 22) >= 1},
+
     doReset(resettingLayer) {
         if (layers[resettingLayer].row <= this.row) return;
       
-        let keep = ["milestones"];
+        let keep = [];
+        keep.push("milestones")
+        keep.push("best")
       
         layerDataReset(this.layer, keep);
-      
     },
 
     gainMult() { 
         mult = new Decimal(2).pow(player.v.points.pow(2)).pow(1.9)
+        if (hasUpgrade('m', 51)) mult = mult.div(upgradeEffect('m', 51))
         return mult
     },
     amplifierBase() { 
@@ -2285,30 +2585,37 @@ addLayer("v", {
         if (hasUpgrade('v', 12)) base = base.add(upgradeEffect('v', 12))
         if (hasUpgrade('a', 52)) base = base.add(upgradeEffect('a', 52))
         base = base.add(buyableEffect('c', 21))
+        if (hasUpgrade('m', 52)) base = base.add(upgradeEffect('m', 52))
+        if (challengeCompletions('m', 32) >= 1) base = base.add(1.25)
         return base
     },
     freeAmps() {
         let amps = new Decimal(0)
         if (hasUpgrade('v', 22)) amps = amps.add(upgradeEffect('v', 22))
         amps = amps.add(buyableEffect('c', 21))
+        if (hasUpgrade('m', 53)) amps = amps.add(upgradeEffect('m', 53))
         return amps
     },
     effect() {
         let effect = tmp.v.amplifierBase.pow(player.v.points.add(tmp.v.freeAmps)).sub(1)
-        effect = effect.mul(tmp.v.voltageReduction)
         if (hasUpgrade('v', 31)) effect = effect.mul(upgradeEffect('v', 31)[0])
+        if (hasUpgrade('m', 54)) effect = effect.add(upgradeEffect('m', 54))
+        effect = effect.mul(tmp.v.voltageReduction)
+        if (inChallenge('m', 12)) {
+            effect = new Decimal(0)
+        }
         return effect
     },
     effectDescription() {
-        return "which are generating " + format(tmp.v.effect) + " voltage per second"
+        return "which are generating a base of " + format(tmp.v.effect.div(tmp.v.voltageReduction)) + " voltage per second"
     },
     voltageEffect() {
         let effect = player.v.voltage.add(1).log(1.1).pow(1.5).add(1)
         return effect
     },
     voltageReduction() {
-        let effect = new Decimal(2).pow(new Decimal(0 - player.v.resetTime).div(5)).pow(0.5)
-        return effect
+        let effect = new Decimal(2).pow(new Decimal(0 - player.v.resetTime).div(10))
+        return effect.max(0.01)
     },
 
     milestones: {
@@ -2332,20 +2639,6 @@ addLayer("v", {
             effectDescription: "Unlock Batteries (in the Charger layer).",
             done() { return player.v.points.gte(10) }
         },
-    },
-
-    clickables: {
-        11: {
-            title: "Force amplifier reset",
-            onClick() {
-                if (!hasMilestone('c', 9)) {
-                    doReset('v', true)
-                }
-                player.v.resetTime = 0
-                player.v.voltage = new Decimal(0)
-            },
-            canClick() {return true}
-        }
     },
 
     upgrades: {
@@ -2445,7 +2738,7 @@ addLayer("v", {
             description() {return "The sum of all your batteries' percentages increase generator effectiveness. Effect: +" + format(this.effect().mul(100)) + "%"},
             cost: new Decimal(1.25e9),
             effect() {
-                let effect = getBuyableAmount('c', 11).add(getBuyableAmount('c', 12)).add(getBuyableAmount('c', 13)).add(1).log10().div(100)
+                let effect = getBuyableAmount('c', 11).add(getBuyableAmount('c', 12)).add(getBuyableAmount('c', 13)).add(getBuyableAmount('c', 21)).add(getBuyableAmount('c', 22)).add(1).log10().div(50)
                 return effect
             },
             unlocked() {return hasUpgrade('v', 23)},
@@ -2685,8 +2978,9 @@ addLayer("v", {
         "resource-display",
 
         "blank",
+        ["display-text", () => "Voltage generation is currently " + format(tmp.v.effect) + "V/s"],
         ["display-text", () => "Your voltage is " + format(player.v.voltage) + "V, which multiply point, generator power, AC, and DC gain by " + format(tmp.v.voltageEffect)],
-        ["display-text", () => "Time since last Amplifier reset is multiplying voltage gain by " + format(tmp.v.voltageReduction)],
+        ["display-text", () => "Time since last Amplifier reset is multiplying voltage gain by " + format(tmp.v.voltageReduction) + " (minimum 0.01)"],
         "blank",
         ["display-text", () => "Your amplifier base is " + format(tmp.v.amplifierBase)],
         ["display-text", () => {
@@ -2700,12 +2994,12 @@ addLayer("v", {
 
         "milestones",
         "blank",
-        "clickables",
-        "blank",
         "upgrades"
 
     ],
     update(diff) {
-        player.v.voltage = player.v.voltage.add(tmp.v.effect.mul(diff))
+        if (!player.m.inDialogue) player.v.voltage = player.v.voltage.add(tmp.v.effect.mul(diff))
+        if (player.v.voltage > tmp.v.calculateVoltageLimit) player.v.voltageOverflowTime = player.v.resetTime
+        if (player.v.resetTime - player.v.voltageUnderflowTime > 60) {player.v.voltage = new Decimal(0); player.v.resetTime = 0}
     }
 })
