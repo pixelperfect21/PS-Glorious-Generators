@@ -2775,7 +2775,7 @@ addLayer("v", {
                 }
             },
             effect() {
-                let effect1 = player.v.voltage.add(1).log(25).div(2.5).add(1)
+                let effect1 = player.v.voltage.add(1).log(25).div(1.5).add(1)
                 let effect2 = player.c.charge.add(1).log(25).mul(2.5).add(1)
                 let effect = [effect1, effect2]
                 return effect

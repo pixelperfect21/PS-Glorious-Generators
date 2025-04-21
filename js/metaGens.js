@@ -237,10 +237,10 @@ function triggerDialogues() {
     if (player.m.dialogueStatus == "metaUpgrades2" && player.m.metaTokens.gte(25)) {
         startDialogue('metaUpgrades3')
     }
-    if (player.m.dialogueStatus == "metaUpgrades3" && getBuyableAmount('m', 31).eq(1) && getBuyableAmount('m', 61).eq(0)) {
+    if (player.m.dialogueStatus == "metaUpgrades3" && getBuyableAmount('m', 31).eq(1)) {
         startDialogue('metaUpgrades4A')
     }
-    if (player.m.dialogueStatus == "metaUpgrades3" && getBuyableAmount('m', 31).eq(0) && getBuyableAmount('m', 61).eq(1)) {
+    if (player.m.dialogueStatus == "metaUpgrades3" && getBuyableAmount('m', 51).eq(1)) {
         startDialogue('metaUpgrades4B')
     }
     if ((player.m.dialogueStatus == "metaUpgrades4A" || player.m.dialogueStatus == "metaUpgrades4B") && player.m.points.eq(7)) {
@@ -257,13 +257,13 @@ function triggerDialogues() {
     }
     if (player.m.dialogueStatus == "metaMaintenance4" && player.m.points.gte(14) && challengeCompletions('m', 12) >= 1 && challengeCompletions('m', 22) >= 1 && challengeCompletions('m', 32) >= 1) {
         startDialogue('halfUpdateEnd')
-    }
+    } /*
     if (player.m.dialogueStatus == "metaBatteries1" && challengeCompletions('m', 61) >= 0.05) {
         startDialogue('metaBatteries2')
     }
     if (player.m.dialogueStatus == "metaBatteries2" && !inChallenge('m', 61)) {
         startDialogue('metaBatteries3')
-    }
+    } */
 }
 addLayer("m", {
     branches: ['c', 'v'],
@@ -322,7 +322,7 @@ addLayer("m", {
     },
     getNextAt(canMax=false) {
         let req = new Decimal(1e34)
-        req = req.mul(new Decimal(2).pow(player.m.points.pow(tmp.m.exponent)).add(1))
+        req = req.mul(new Decimal(2).pow(player.m.points.pow(tmp.m.exponent)))
         return req
     },
     prestigeButtonText() {

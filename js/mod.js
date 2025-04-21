@@ -12,8 +12,8 @@ let modInfo = {
 
 // Set your version in num and name
 let VERSION = {
-	num: "1.1",
-	name: "Half An Update Is Better Than None",
+	num: "1.11",
+	name: "Pixel, Please Stop Fumbling Updates",
 }
 
 let changelog = `<h1>Changelog:</h1><br>
@@ -25,9 +25,12 @@ let changelog = `<h1>Changelog:</h1><br>
 	<h3>v1.1: Half An Update Is Better Than None</h3><br>
 		- Added content to the Meta-Generator layer.<br>
 		- Added max buying to the Generator, Alternator, and Dynamo layers<br>
-		- Reworked the Voltage mechanic`
+		- Reworked the Voltage mechanic<br>
+	<h3>v1.11: Pixel, Please Stop Fumbling Updates</h3><br>
+		- Balancing reworks<br>
+		- Fixed Meta Generator related bugs<br>`
 
-let winText = `Congratulations! You have reached the end and beaten this game, but for now...`
+let winText = `if you can see this you most likely caused something to inflate, please let me know, and also tell me your most recently purchased upgrade (if you remember what it was)`
 
 // If you add new functions anywhere inside of a layer, and those functions have an effect when called, add them here.
 // (The ones here are examples, all official functions are already taken care of)
@@ -107,5 +110,13 @@ function fixOldSave(oldVersion){
 		}
 		player.m.metaTokens = new Decimal(1)
 		startDialogue("introduction1")
+	}
+	if (oldVersion <= "1.1") {
+		if (player.m.points.lte(0) && player.m.metaTokens.gte(1)) {
+			player.m.points = new Decimal(1)
+		}
+		if (player.m.dialogueStatus == "metaUpgrades3" && getBuyableAmount('m', 51).eq(1)) {
+			startDialogue('metaUpgrades4B')
+		}
 	}
 }
