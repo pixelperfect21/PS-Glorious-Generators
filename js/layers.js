@@ -2561,7 +2561,7 @@ addLayer("v", {
         player.v.voltage = new Decimal(0)
     },
 
-    tooltip() {return format(player.v.points, 0) + " amplifiers (" + format(tmp.v.amplifierBase) + "^,  +" +  format(tmp.v.freeChargers) + ")"},
+    tooltip() {return format(player.v.points, 0) + " amplifiers (" + format(tmp.v.amplifierBase) + "^,  +" +  format(tmp.v.freeAmps) + ")"},
 
     canBuyMax() {return challengeCompletions('m', 22) >= 1},
 
