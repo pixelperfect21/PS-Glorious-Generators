@@ -996,7 +996,7 @@ addLayer("g", {
 
     ],
     update(diff) {
-        if (!player.m.inDialogue) player.g.generatorPower = player.g.generatorPower.add(tmp.g.effect.mul(diff))
+        player.g.generatorPower = player.g.generatorPower.add(tmp.g.effect.mul(diff))
     }
 })
 addLayer("a", {
@@ -1566,7 +1566,7 @@ addLayer("a", {
 
     ],
     update(diff) {
-        if (!player.m.inDialogue) player.a.alternatingCurrent = player.a.alternatingCurrent.add(tmp.a.effect.mul(diff))
+        player.a.alternatingCurrent = player.a.alternatingCurrent.add(tmp.a.effect.mul(diff))
     }
 })
 addLayer("d", {
@@ -2134,7 +2134,7 @@ addLayer("d", {
 
     ],
     update(diff) {
-        if (!player.m.inDialogue) player.d.directCurrent = player.d.directCurrent.add(tmp.d.effect.mul(diff))
+        player.d.directCurrent = player.d.directCurrent.add(tmp.d.effect.mul(diff))
     }
 })
 addLayer("c", {
@@ -2521,7 +2521,7 @@ addLayer("c", {
         ["microtabs", "chargeMicrotabs"],
     ],
     update(diff) {
-        if (!player.m.inDialogue) player.c.charge = player.c.charge.add(tmp.c.effect.mul(diff)).min(tmp.c.chargeLimit)
+	player.c.charge = player.c.charge.add(tmp.c.effect.mul(diff)).min(tmp.c.chargeLimit)
     }
 })
 addLayer("v", {
@@ -2998,7 +2998,7 @@ addLayer("v", {
 
     ],
     update(diff) {
-        if (!player.m.inDialogue) player.v.voltage = player.v.voltage.add(tmp.v.effect.mul(diff))
+        player.v.voltage = player.v.voltage.add(tmp.v.effect.mul(diff))
         if (player.v.voltage > tmp.v.calculateVoltageLimit) player.v.voltageOverflowTime = player.v.resetTime
         if (player.v.resetTime - player.v.voltageUnderflowTime > 60) {player.v.voltage = new Decimal(0); player.v.resetTime = 0}
     }
