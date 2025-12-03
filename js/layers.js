@@ -2972,6 +2972,16 @@ addLayer("v", {
         },
     },
 
+	clickables: {
+		11: {
+            title: "Force amplifier reset",
+            onClick() {
+                doReset('v', true)
+            },
+            canClick() {return true},
+        }
+	}
+
     tabFormat: [
         "main-display",
         "prestige-button",
@@ -2993,6 +3003,8 @@ addLayer("v", {
         "blank",
 
         "milestones",
+		"blank",
+		"clickables"
         "blank",
         "upgrades"
 
