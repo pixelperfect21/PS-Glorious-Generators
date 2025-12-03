@@ -3004,7 +3004,7 @@ addLayer("v", {
 
         "milestones",
 		"blank",
-		"clickables"
+		"clickables",
         "blank",
         "upgrades"
 
