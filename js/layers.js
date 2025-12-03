@@ -2980,7 +2980,7 @@ addLayer("v", {
             },
             canClick() {return true},
         }
-	}
+	},
 
     tabFormat: [
         "main-display",
