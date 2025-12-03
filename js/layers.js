@@ -2974,7 +2974,8 @@ addLayer("v", {
 
 	clickables: {
 		11: {
-            title: "Force amplifier reset (Use if voltage generation is too low)",
+            title: "Force amplifier reset"
+			display() {return "Use if voltage generation is too low"},
             onClick() {
                 doReset('v', true)
             },
