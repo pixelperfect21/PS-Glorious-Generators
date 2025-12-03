@@ -1,3 +1,4 @@
+
 addLayer("achievements", {
     name: "achievements", 
     color: "#FFFF00",
@@ -2308,7 +2309,7 @@ addLayer("c", {
         },  
         9: {
             requirementDescription: "100% charged Dynamo Battery",
-            effectDescription: "Unlock 2 more batteries.",
+            effectDescription: "Unlock 2 more batteries. Force amplifier reset button only resets amplifier reset time.",
             done() { return getBuyableAmount('c', 13).gte(100) },
             unlocked() {return hasMilestone('v', 3)}
         },  
@@ -2974,10 +2975,13 @@ addLayer("v", {
 
 	clickables: {
 		11: {
-            title: "Force amplifier reset",
-			display() {return "Use if voltage generation is too low"},
+            title: "Force amplifier reset (Use if voltage generation is too low)",
             onClick() {
-                doReset('v', true)
+                if (hasMilestone('c', 9)) {
+                    player.v.resetTime = 0
+                } else {
+                    doReset('v', true)
+                }
             },
             canClick() {return true},
         }
