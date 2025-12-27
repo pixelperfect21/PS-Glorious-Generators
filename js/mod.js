@@ -12,8 +12,8 @@ let modInfo = {
 
 // Set your version in num and name
 let VERSION = {
-	num: "1.111",
-	name: "PIXEL I TOLD YOU TO STOP FUMBLING",
+	num: "1.1111",
+	name: "bugfixing adkv",
 }
 
 let changelog = `<h1>Changelog:</h1><br>
@@ -30,7 +30,9 @@ let changelog = `<h1>Changelog:</h1><br>
 		- Balancing reworks<br>
 		- Fixed Meta Generator related bugs<br>
 	<h3>v1.111: PIXEL I TOLD YOU TO STOP FUMBLING</h3><br>
-		- Fixed old saves recieving a free meta generator`
+		- Fixed old saves recieving a free meta generator
+	<h3>v1.1111: bugfixing adkv</h3><br>
+		- Added back the force amplifier reset button and removed dialogue freezing all generation`
 
 let winText = `if you can see this you most likely caused something to inflate, please let me know, and also tell me your most recently purchased upgrade (if you remember what it was)`
 
@@ -44,7 +46,7 @@ function getStartPoints(){
 
 // Determines if it should show points/sec
 function canGenPoints(){
-	return !player.m.inDialogue
+	return true
 }
 
 // Calculate points/sec!
